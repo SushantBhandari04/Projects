@@ -8,16 +8,6 @@ PokePedia is a comprehensive encyclopedia for all things Pokémon. This project 
 - Search functionality to find specific Pokémon
 - Generates cards showing abilities and stats
 
-## Installation
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/PokePedia.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd PokePedia
-    ```
 
 ## Contributing
 

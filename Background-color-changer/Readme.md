@@ -8,16 +8,6 @@ This project is a simple web application that allows users to change the backgro
 - User-friendly interface
 - Lightweight and fast
 
-## Installation
-
-1. Clone the repository:
-    ```sh
-    git clone https://github.com/yourusername/Background-color-changer.git
-    ```
-2. Navigate to the project directory:
-    ```sh
-    cd Background-color-changer
-    ```
 
 ## Usage
 
