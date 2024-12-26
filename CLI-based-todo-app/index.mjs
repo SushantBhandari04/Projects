@@ -53,6 +53,12 @@ program
  .argument('<id>','Id of the todo')
  .action((id) => {
     const todos = readTodos();
+    const todo = todos.find((todo)=>todo.id==id)
+
+    if(!todo){
+      console.log(chalk.red("No todo of this id is present. Enter a valid id."))
+      return;
+    }
     const newTodos = todos.filter((todo)=>todo.id!=id)
     writeTodos(JSON.stringify(newTodos));
     console.log(chalk.green("Todo deleted.\n"));
@@ -65,6 +71,12 @@ program
  .action((id) => {
     const todos = readTodos();
     const todo = todos.find((todo)=>todo.id==id)
+
+    if(!todo){
+      console.log(chalk.red("No todo of this id is present. Enter a valid id."))
+      return;
+    }
+
     todo.done = true;
     writeTodos(JSON.stringify(todos));
     console.log(chalk.green("Todo completed.\n"))
@@ -75,7 +87,7 @@ program
   .option('--all', 'Displays all the todos.')
   .option('--completed', 'Displays only the completed todos.')
   .option('--pending', 'Displays only the pending todos.')
-  .description(chalk.yellow('Displays the todos.'))
+  .description(chalk.yellow('Displays the todos based on the options( all, completed, pending ). Example: display --all'))
   .action((options)=>{
     const todos = readTodos();
 
@@ -98,7 +110,7 @@ program
   .option('--title <title>', 'To update title of the todo.')
   .option('--description <description>', 'To update description of the todo.')
   .option('--deadline <deadline>', 'To update deadline of the todo.')
-  .description(chalk.yellow('Updates the todos.'))
+  .description(chalk.yellow('Updates the todos based on the options( title, description, deadline). Example: update 0 --title Walk --description "Go on a walk"'))
   .action((id, options) => {
     let todos = readTodos();
     const todoId = parseInt(id);
@@ -124,6 +136,23 @@ program
       console.log(chalk.green("Todo updated.\n"));
     }
   });
+
+  program
+   .command('details')
+   .description(chalk.yellow('Gives the details of a todo.'))
+   .argument('<id>','Id of the todo')
+   .action((id)=>{
+    const todos = readTodos();
+
+    const todo = todos.find((todo)=>todo.id==id);
+
+    if(!todo){
+      console.log(chalk.red("No todo of this id is present. Enter a valid id."))
+      return;
+    }
+    
+    displayTodos([todo]);
+   })
 
 
 
