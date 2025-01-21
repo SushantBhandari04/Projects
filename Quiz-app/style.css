@@ -6,7 +6,7 @@ body{
     height: 100vh;
     margin: 0px;
     padding: 0px;
-    background-color: rgba(15, 18, 45, 0.988)
+    background-color: rgba(36, 41, 83, 0.949)
     
 }
 
@@ -17,7 +17,7 @@ body{
     height: 600px;
     width: 900px;
     border-radius: 15px;
-    background-color: #0a1419;
+    background-color: #0a1419e4;
     padding-bottom: 0px;
 
 }
@@ -28,7 +28,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: #0a1419;
+    background-color: #0a1419e4;
     align-items: center;
     border-radius: 15px;
 }
